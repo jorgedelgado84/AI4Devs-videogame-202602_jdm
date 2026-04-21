@@ -1,0 +1,93 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Courier New', monospace;
+  color: #fff;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── HUD ── */
+#hud {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 800px;
+  padding: 0 8px;
+}
+
+.panel { display: flex; flex-direction: column; gap: 5px; }
+.panel.right { align-items: flex-end; }
+
+.player-name { font-size: 13px; opacity: 0.75; }
+.score       { font-size: 32px; font-weight: bold; line-height: 1; }
+
+.p2 .player-name, .p2 .score { color: #3366ff; }
+.p1 .player-name, .p1 .score { color: #ff3333; }
+
+.bar-track {
+  width: 200px; height: 10px;
+  background: #2a2a2a;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.bar-fill { height: 100%; width: 0%; border-radius: 5px; transition: width 0.15s ease-out; }
+.p2 .bar-fill { background: #3366ff; }
+.p1 .bar-fill { background: #ff3333; }
+
+#hud-mid { text-align: center; font-size: 14px; color: #444; }
+
+/* ── CANVAS ── */
+#canvas-wrap { position: relative; line-height: 0; }
+
+#gameCanvas {
+  display: block;
+  width: 800px; height: 400px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border: 1px solid #1e1e1e;
+}
+
+/* ── OVERLAY ── */
+#overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.82);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+}
+#overlay.show { display: flex; }
+#overlay-title { font-size: 30px; font-weight: bold; }
+#overlay-sub   { font-size: 14px; color: #666; }
+
+/* ── POWER-UP STATUS ── */
+#pu-status {
+  height: 18px;
+  width: 800px;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ── CONTROLS HINT ── */
+#controls {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  font-size: 11px;
+  color: #3a3a3a;
+  padding: 0 4px;
+}

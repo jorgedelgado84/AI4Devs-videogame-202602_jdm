@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ping Pong</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="container">
+
+  <div id="hud">
+    <div class="panel p2">
+      <div class="player-name">Jugador 2</div>
+      <div class="score" id="score-left">0</div>
+      <div class="bar-track"><div class="bar-fill" id="bar-left"></div></div>
+    </div>
+    <div id="hud-mid">VS</div>
+    <div class="panel p1 right">
+      <div class="player-name">Jugador 1</div>
+      <div class="score" id="score-right">0</div>
+      <div class="bar-track"><div class="bar-fill" id="bar-right"></div></div>
+    </div>
+  </div>
+
+  <div id="canvas-wrap">
+    <canvas id="gameCanvas" width="200" height="100"></canvas>
+    <div id="overlay">
+      <div id="overlay-title">¡Jugador gana!</div>
+      <div id="overlay-sub">Presiona ESPACIO para jugar de nuevo</div>
+    </div>
+  </div>
+
+  <div id="pu-status"></div>
+
+  <div id="controls">
+    <span>J2 (Azul): W/S = arriba/abajo &nbsp;·&nbsp; A/D = izq/der</span>
+    <span>J1 (Rojo): ↑/↓ = arriba/abajo &nbsp;·&nbsp; ←/→ = izq/der</span>
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
